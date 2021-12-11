@@ -4,17 +4,17 @@ using namespace std;
 
 class contact {
 private:
-	string first_name;
-	string last_name;
-	string nickname;
-	string darkest_secret;
-	int phonenumber;
+	string	first_name;
+	string	last_name;
+	string	nickname;
+	string	darkest_secret;
+	int		phonenumber;
 public:
-	void	add_first_name(string arg) {first_name = arg;}
-	void	add_last_name(string arg) {last_name = arg;}
-	void	add_nickname(string arg) {nickname = arg;}
-	void	add_darkest_secret(string arg) {darkest_secret = arg;}
-	void	add_phonenumber(int arg) {phonenumber = arg;}
+	void	add_first_name() {std::cin >> first_name;}
+	void	add_last_name() {std::cin >> last_name;}
+	void	add_nickname() {std::cin >> nickname;}
+	void	add_darkest_secret() {std::cin >> darkest_secret;}
+	void	add_phonenumber() {std::cin >> phonenumber;}
 
 	void print_contact() {
 		std::cout << "\n" << "First name : " << first_name << "\n";
