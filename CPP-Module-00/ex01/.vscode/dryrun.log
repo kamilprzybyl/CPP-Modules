@@ -1,0 +1,6 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/kprzybyl/42_projects/CPP-Modules/CPP-Module-00/ex01'
+g++ -Wall -Wextra -Werror phonebook.cpp -o phonebook
+ 
+make: Leaving directory `/Users/kprzybyl/42_projects/CPP-Modules/CPP-Module-00/ex01'
+ 

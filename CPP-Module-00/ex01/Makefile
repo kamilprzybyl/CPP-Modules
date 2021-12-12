@@ -1,8 +1,10 @@
-FLAGS = -Wall -Wextra -Werror
-NAME = phonebook
-CC = g++
-SRC = phonebook.cpp
-OBJ = $(SRC:.cpp=.o)
+FLAGS	=	-Wall -Wextra -Werror
+NAME	=	phonebook
+CC		=	g++
+SRC		=	main.cpp \
+			phonebook.cpp \
+			contact.cpp
+OBJ		=	$(SRC:.cpp=.o)
 
 all: $(NAME)
 

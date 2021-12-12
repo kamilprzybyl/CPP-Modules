@@ -1,9 +1,22 @@
 #include "phonebook.hpp"
 
-void search(phonebook phonebook) {
+// Phonebook::~Phonebook(void){}
+
+void	Phonebook::display() {
+	std::cout << "index     |first_name|last_name |nickname  " << std::endl;
+	for (int i = 0; i < 8; i++) {
+		std::cout << i << std::setw(10) << "|";
+		std::cout << _contacts[i].getFirstName() << std::setw(11 - _contacts[i].getFirstName().length()) << "|";
+		std::cout << _contacts[i].getLastName() << std::setw(11 - _contacts[i].getLastName().length()) << "|";
+		std::cout << _contacts[i].getNickname() << std::setw(11 - _contacts[i].getNickname().length());
+		std::cout << std::endl;
+	}
+}
+
+void	Phonebook::search() {
 	int index;
 
-	phonebook.display();
+	display();
 	while (1) {
 		std::cout << "index: ";
 		std::cin >> index;
@@ -14,41 +27,25 @@ void search(phonebook phonebook) {
 			std::cout << "Error: Wrong index";
 		}
 	}
-	phonebook.contact[index].print_contact();
+	_contacts[index].printContact();
 }
 
-void add(phonebook &phonebook, int i) {
+void	Phonebook::add(int i) {
+	std::string	input;
+
 	std::cout << "First name: ";
-	phonebook.contact[i].add_first_name();
+	std::getline(std::cin, input);
+	_contacts[i].setFirstName(input);
 	std::cout << "Last name: ";
-	phonebook.contact[i].add_last_name();
+	std::getline(std::cin, input);
+	_contacts[i].setLastName(input);
 	std::cout << "Nickname: ";
-	phonebook.contact[i].add_nickname();
+	std::getline(std::cin, input);
+	_contacts[i].setNickname(input);
 	std::cout << "Darkest secret: ";
-	phonebook.contact[i].add_darkest_secret();
+	std::getline(std::cin, input);
+	_contacts[i].setDarkestSecret(input);
 	std::cout << "Phonenumber: ";
-	phonebook.contact[i].add_phonenumber();
-}
-
-int main() {
-	phonebook	phonebook;
-	string		cmd;
-	int			i;
-
-	i = 0;
-	while (1) {
-		std::cout << "> ";
-		getline(cin, cmd);
-		if (cmd == "EXIT")
-			return 0;
-		else if (cmd == "SEARCH")
-			search(phonebook);
-		else if (cmd == "ADD") {
-			add(phonebook, i);
-			i++;
-			if (i == 8)
-				i = 0;
-		}
-	}
-	return 0;
+	std::getline(std::cin, input);
+	_contacts[i].setPhonenumber(input);
 }
