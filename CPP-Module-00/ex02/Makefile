@@ -1,8 +1,9 @@
-FLAGS = -Wall -Wextra -Werror
-NAME = megaphone
-CC = g++
-SRC = megaphone.cpp
-OBJ = $(SRC:.cpp=.o)
+FLAGS	=	-Wall -Wextra -Werror
+NAME	=	account
+CC		=	g++
+SRC		=	Account.cpp \
+			tests.cpp
+OBJ		=	$(SRC:.cpp=.o)
 
 all: $(NAME)
 
