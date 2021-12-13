@@ -15,29 +15,28 @@ void	Phonebook::display() {
 	std::cout << std::setw(10) << "last name" << "|";
 	std::cout << std::setw(10) << "nickname" << std::endl;
 	for (int i = 0; i < 8; i++) {
-		std::cout << i << std::setw(10) << "|";
-		std::cout << _contacts[i].getFirstName() << std::setw(11 - _contacts[i].getFirstName().length()) << "|";
-		std::cout << _contacts[i].getLastName() << std::setw(11 - _contacts[i].getLastName().length()) << "|";
-		std::cout << _contacts[i].getNickname() << std::setw(11 - _contacts[i].getNickname().length());
-		std::cout << std::endl;
+		std::cout << std::setw(10) << i << "|";
+		(_contacts[i].getFirstName().length() > 10) ? std::cout << std::setw(10) << _contacts[i].getFirstName().substr(0, 9) + "." << "|" : std::cout << std::setw(10) << _contacts[i].getFirstName() << "|";
+		(_contacts[i].getLastName().length() > 10) ? std::cout << std::setw(10) << _contacts[i].getLastName().substr(0, 9) + "." << "|" : std::cout << std::setw(10) << _contacts[i].getLastName() << "|";
+		(_contacts[i].getNickname().length() > 10) ? std::cout << std::setw(10) << _contacts[i].getNickname().substr(0, 9) + "." << std::endl : std::cout << std::setw(10) << _contacts[i].getNickname() << std::endl;
 	}
 }
 
 void	Phonebook::search() {
-	int index;
+	std::string index;
 
 	display();
 	while (1) {
 		std::cout << "index: ";
 		std::cin >> index;
-		if (index >= 0 && index <= 7) {
+		if (index.length() == 1 && index[0] >= '0' && index[0] <= '7') {
 			break ;
 		}
 		else {
-			std::cout << "Error: Wrong index";
+			std::cout << "Error: Wrong index" << std::endl;
 		}
 	}
-	_contacts[index].printContact();
+	_contacts[index[0] - 48].printContact();
 }
 
 void	Phonebook::add(int i) {
