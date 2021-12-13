@@ -1,6 +1,13 @@
 #include "phonebook.hpp"
 
-// Phonebook::~Phonebook(void){}
+Phonebook::Phonebook() {
+	std::cout << "PHONEBOOK" << std::endl;
+	std::cout << "- ADD - adds a new contact" << std::endl;
+	std::cout << "- SEARCH - opens phonebook" << std::endl;
+	std::cout << "- EXIT - guess what..." << std::endl;
+}
+
+Phonebook::~Phonebook(void){}
 
 void	Phonebook::display() {
 	std::cout << "index     |first_name|last_name |nickname  " << std::endl;
