@@ -1,20 +1,20 @@
-FLAGS	=	-Wall -Wextra -Werror
-NAME	=	account
-CC		=	g++
+CFLAGS	=	-Wall -Wextra -Werror
+OUT		=	account
+CC		=	clang++
 SRC		=	Account.cpp \
 			tests.cpp
 OBJ		=	$(SRC:.cpp=.o)
 
-all: $(NAME)
+all: $(OUT)
 
-$(NAME):
-	$(CC) $(FLAGS) $(SRC) -o $@
+$(OUT): $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o $@
 
 clean:
 	rm -fr $(OBJ)
 
 fclean:
 	make clean
-	rm -fr $(NAME)
+	rm -fr $(OUT)
 
 re: fclean all
