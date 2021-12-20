@@ -1,7 +1,8 @@
 #include"Zombie.hpp"
 
 int main() {
-	Zombie zombie1("zombie1");
+	newZombie("Karol");
+	randomChump("Steve");
 
 	return 0;
 }
