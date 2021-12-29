@@ -1,22 +1,18 @@
 #ifndef ZOMBIE_HPP
 #define ZOMBIE_HPP
 
-#include <string>
-#include <iostream>
+#include<string>
+#include<iostream>
 
-class	Zombie {
+class Zombie {
+	private:
+		std::string name;
 
-private:
-	std::string	name;
-
-public:
-	void		announce( void );
-
-	Zombie( std::string name );
-	~Zombie( void );
+	public:
+		Zombie();
+		~Zombie();
+		void	setName( std::string name );
+		void	announce( void );
 };
-
-Zombie*	newZombie( std::string name );
-void	randomChump( std::string name );
 
 #endif
