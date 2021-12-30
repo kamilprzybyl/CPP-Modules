@@ -2,8 +2,7 @@ FLAGS	=	-Wall -Wextra -Werror
 NAME	=	zombie
 CC		=	g++
 SRC		=	Zombie.cpp \
-			newZombie.cpp \
-			randomChump.cpp \
+			ZombieHorde.cpp \
 			main.cpp
 OBJ		=	$(SRC:.cpp=.o)
 

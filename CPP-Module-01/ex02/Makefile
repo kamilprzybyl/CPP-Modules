@@ -1,10 +1,7 @@
 FLAGS	=	-Wall -Wextra -Werror
-NAME	=	zombie
+NAME	=	string
 CC		=	g++
-SRC		=	Zombie.cpp \
-			newZombie.cpp \
-			randomChump.cpp \
-			main.cpp
+SRC		=	main.cpp
 OBJ		=	$(SRC:.cpp=.o)
 
 all: $(NAME)
