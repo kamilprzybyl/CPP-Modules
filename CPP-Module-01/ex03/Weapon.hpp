@@ -1,5 +1,4 @@
-#ifndef WEAPON_HPP
-#define WEAPON_HPP
+#pragma once
 
 #include <string>
 #include <iostream>
@@ -10,12 +9,10 @@ class Weapon {
 		std::string	type;
 
 	public:
-		Weapon( std::string arg );
+		Weapon( std::string type );
 		~Weapon();
 
-		std::string&	getType( std::string type ) const;
-		void			setType( std::string type );
+		std::string&	getType() const;
+		void			setType( const std::string& type );
 
 };
-
-#endif
