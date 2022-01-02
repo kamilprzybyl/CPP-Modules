@@ -1,10 +1,8 @@
 CFLAGS	=	-Wall -Wextra -Werror
-OUT		=	weapon
+OUT		=	replace
 CC		=	clang++
 SRC		=	main.cpp \
-			Weapon.cpp \
-			HumanA.cpp \
-			HumanB.cpp
+			Sed.cpp
 OBJ		=	$(SRC:.cpp=.o)
 
 all: $(OUT)
