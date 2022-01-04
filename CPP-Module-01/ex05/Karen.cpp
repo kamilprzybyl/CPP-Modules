@@ -24,30 +24,46 @@ void	Karen::error( void ) {
 	std::cout << "This is unacceptable, I want to speak to the manager now." << std::endl;
 }
 
+static const std::string	levels[] = {
+
+	"DEBUG",
+	"INFO",
+	"WARNING",
+	"ERROR"
+};
+
+static int	getLevel( std::string level ) {
+
+	int	i = 0;
+	while (i < 4) {
+
+		if (level == levels[i]) {
+
+			return (i);
+		}
+		i++;
+	}
+
+	return (i);
+}
+
 void	Karen::complain( std::string level ) {
 
-	std::string	levels[] = {
+	switch (getLevel(level)) {
 
-		"DEBUG",
-		"INFO",
-		"WARNING",
-		"ERROR"
-	};
-
-	void	(Karen::*f[])(void) = {
-
-		&Karen::debug,
-		&Karen::info,
-		&Karen::warning,
-		&Karen::error
-	};
-
-	for (int i = 0; i < 4; ++i) {
-
-		if (levels[i] == level) {
-
-			(this->*f[i])();
-			return;
-		}
+		case (0):
+			debug();
+			break;
+		case (1):
+			info();
+			break;
+		case (2):
+			warning();
+			break;
+		case (3):
+			error();
+			break;
+		default:
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 	}
 }

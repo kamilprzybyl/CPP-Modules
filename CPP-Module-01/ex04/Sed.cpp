@@ -4,26 +4,39 @@ Sed::Sed() {}
 
 Sed::~Sed() {}
 
-void	Sed::replace(std::string const &filename, std::string const &search, std::string const &replace) {
+void	Sed::replace(std::string const &filename, char *search, char *replace) {
 
 	std::ifstream	infile;
 	std::ofstream	outfile;
 	std::string		line;
 
 	infile.open(filename);
-	if (!infile)
-		throw "couldn't open the input file";
+	if (!infile) {
+
+		std::cout << "couldn't open the input file" << std::endl;
+		return;
+	}
 	outfile.open(filename + ".replace", std::ios::trunc);
 	if (!outfile) {
 
 		infile.close();
-		throw "couldn't open the output file";
+		std::cout << "couldn't open the output file" << std::endl;
+		return;
 	}
 	while (std::getline(infile, line)) {
 
+		size_t	n = strlen(search);
 		size_t	pos = line.find(search);
-		if (pos != std::string::npos)
-			line.replace(pos, replace.length(), replace);
+
+		while (pos != std::string::npos) {
+
+			line.erase(pos, n);
+			line.insert(pos, replace);
+
+			pos += strlen(replace);
+			pos = line.find(search, pos, n);
+		}
+
 		outfile << line;
 		if (!infile.eof())
 			outfile << '\n';

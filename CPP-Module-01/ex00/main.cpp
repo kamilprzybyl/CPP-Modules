@@ -6,5 +6,5 @@ int main() {
 	newZom->announce();
 	randomChump( "Steve" );
 
-	return 0;
+	delete newZom;
 }
