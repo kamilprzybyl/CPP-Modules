@@ -6,7 +6,13 @@ HumanB::~HumanB() {}
 
 void	HumanB::attack() const {
 
-	std::cout << this->name << "  attacks with his " << this->weapon->getType() << std::endl;
+	if (this->weapon) {
+		
+		std::cout << this->name << "  attacks with his " << this->weapon->getType() << std::endl;
+		return;
+	}
+
+	std::cout << this->name << ": no weapon set" << std::endl;
 }
 
 void	HumanB::setWeapon( Weapon& weapon ) {
