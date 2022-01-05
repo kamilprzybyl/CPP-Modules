@@ -1,6 +1,6 @@
 FLAGS	=	-Wall -Wextra -Werror
 NAME	=	string
-CC		=	g++
+CC		=	c++
 SRC		=	main.cpp
 OBJ		=	$(SRC:.cpp=.o)
 

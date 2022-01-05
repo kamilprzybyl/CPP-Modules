@@ -11,9 +11,5 @@ class	Karen {
 		void	error( void );
 
 	public:
-		Karen();
-		~Karen();
-
 		void	complain( std::string level );
-
 };

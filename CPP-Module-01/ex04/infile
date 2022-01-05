@@ -1,6 +1,11 @@
-Kamil Kamil Przybyl
-Hahahahah
-LOL
-Superr cool
-Coca Cola
-Jazda kurwa!
+total 416
+-rw-r--r--  1 kprzybyl  2021_heilbronn    245 Jan  4 13:32 Makefile
+-rw-r--r--  1 kprzybyl  2021_heilbronn    840 Jan  4 13:48 Sed.cpp
+-rw-r--r--  1 kprzybyl  2021_heilbronn    836 Jan  4 15:59 Sed.cpp.replace
+-rw-r--r--  1 kprzybyl  2021_heilbronn    210 Jan  4 13:49 Sed.hpp
+-rw-r--r--  1 kprzybyl  2021_heilbronn  69812 Jan  4 15:58 Sed.o
+-rw-r--r--  1 kprzybyl  2021_heilbronn      0 Jan  4 15:59 infile
+-rw-r--r--  1 kprzybyl  2021_heilbronn     72 Jan  4 13:48 infile.replace
+-rw-r--r--  1 kprzybyl  2021_heilbronn    204 Jan  4 13:47 main.cpp
+-rw-r--r--  1 kprzybyl  2021_heilbronn  14832 Jan  4 15:58 main.o
+-rwxr-xr-x  1 kprzybyl  2021_heilbronn  97096 Jan  4 15:58 replace

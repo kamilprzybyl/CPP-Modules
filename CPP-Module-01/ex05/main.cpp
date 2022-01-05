@@ -4,7 +4,7 @@ int	main() {
 
 	Karen	karen;
 
-	karen.complain( "ERROR" );
+	karen.complain( "INFO" );
 
 	return 0;
 }

@@ -1,9 +1,5 @@
 #include "Karen.hpp"
 
-Karen::Karen() {}
-
-Karen::~Karen() {}
-
 void	Karen::debug( void ) {
 
 	std::cout << "I love to get extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger." << std::endl;
