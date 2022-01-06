@@ -10,23 +10,23 @@ class	Fixed {
 		static const int	_fractBit = 8;
 
 	public:
-		Fixed();
+		Fixed( void );
 		Fixed( int const num );
 		Fixed( float const num );
-		Fixed( Fixed const &a );
+		Fixed( Fixed const &b );
 		~Fixed();
 
-		Fixed	&operator=( Fixed const &a );
-		bool	operator>( Fixed const &a );
-		bool	operator<( Fixed const &a );
-		bool	operator>=( Fixed const &a );
-		bool	operator<=( Fixed const &a );
-		bool	operator==( Fixed const &a );
-		bool	operator!=( Fixed const &a );
-		Fixed	operator+( Fixed const &a );
-		Fixed	operator-( Fixed const &a );
-		Fixed	operator*( Fixed const &a );
-		Fixed	operator/( Fixed const &a );
+		Fixed	&operator=( Fixed const &b );
+		bool	operator>( Fixed const &b );
+		bool	operator<( Fixed const &b );
+		bool	operator>=( Fixed const &b );
+		bool	operator<=( Fixed const &b );
+		bool	operator==( Fixed const &b );
+		bool	operator!=( Fixed const &b );
+		Fixed	operator+( Fixed const &b );
+		Fixed	operator-( Fixed const &b );
+		Fixed	operator*( Fixed const &b );
+		Fixed	operator/( Fixed const &b );
 		Fixed	&operator++( void );
 		Fixed	&operator--( void );
 		Fixed	operator++( int );
@@ -36,6 +36,11 @@ class	Fixed {
 		void	setRawBits( int const raw );
 		int		toInt( void ) const;
 		float	toFloat( void ) const;
+
+		static Fixed		&min( Fixed &a, Fixed &b );
+		static Fixed		&max( Fixed &a, Fixed &b );
+		static Fixed const	&min( Fixed const &a, Fixed const &b );
+		static Fixed const	&max( Fixed const &a, Fixed const &b );
 };
 
-std::ostream	&operator<<( std::ostream &os, Fixed const &a );
+std::ostream	&operator<<( std::ostream &os, Fixed const &b );
