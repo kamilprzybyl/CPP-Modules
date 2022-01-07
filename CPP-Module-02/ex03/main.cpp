@@ -3,7 +3,7 @@
 int	main( void ) {
 
 	Point		obj;
-	Point const	point( Fixed(100), Fixed(150) );
+	Point const	point( Fixed(1), Fixed(1) );
 	Point const	a( Fixed(0), Fixed(0) );
 	Point const	b( Fixed(0), Fixed(10) );
 	Point const	c( Fixed(30), Fixed(10) );
