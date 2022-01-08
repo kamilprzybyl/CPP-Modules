@@ -6,13 +6,17 @@ class	ClapTrap {
 
 	private:
 		std::string	_name;
-		int			_hitPoints = 10;
-		int			_energyPoints = 10;
-		int			_attackDamage = 10;
+		int			_hitPoints;
+		int			_energyPoints;
+		int			_attackDamage;
 
 	public:
+		ClapTrap();
 		ClapTrap( std::string name );
+		ClapTrap( ClapTrap const & b );
 		~ClapTrap();
+
+		ClapTrap	&operator=( ClapTrap const & b );
 
 		void	attack( std::string const & target );
 		void	takeDamage( unsigned int amount );

@@ -1,19 +1,35 @@
 #include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap() {}
+
 ClapTrap::ClapTrap( std::string name ) {
 
-	std::cout << "Constructor has been called" << std::endl;
 	this->_name = name;
+	this->_hitPoints = 10;
+	this->_energyPoints = 10;
+	this->_attackDamage = 0;
 }
 
-ClapTrap::~ClapTrap() {
+ClapTrap::ClapTrap( ClapTrap const & b ) {
 
-	std::cout << "Destructor has been called" << std::endl;
+	*this = b;
+}
+
+ClapTrap::~ClapTrap() {}
+
+ClapTrap	&ClapTrap::operator=( ClapTrap const & b ) {
+
+	this->_name = b._name;
+	this->_hitPoints = b._hitPoints;
+	this->_energyPoints = b._energyPoints;
+	this->_attackDamage = b._attackDamage;
+
+	return *this;
 }
 
 void	ClapTrap::attack( std::string const & target ) {
 
-	std::cout << "ClapTrap " << this->_name << " attack " << <target> <<", causing " << <damage> << " points of damage!" << std::endl;
+	std::cout << "ClapTrap " << this->_name << " attack " << target <<", causing " << this->_attackDamage << " points of damage!" << std::endl;
 }
 
 void	ClapTrap::takeDamage( unsigned int amount ) {

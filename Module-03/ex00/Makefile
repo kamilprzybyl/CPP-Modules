@@ -1,5 +1,5 @@
 CFLAGS	=	-Wall -Wextra -Werror
-OUT		=	fixed
+OUT		=	ClapTrap
 CC		=	clang++
 SRC		=	main.cpp \
 			ClapTrap.cpp
