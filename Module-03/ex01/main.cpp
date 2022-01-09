@@ -2,10 +2,10 @@
 
 int	main() {
 
-	// ClapTrap	a("Kamil");
+	ScavTrap	a( "Loki" );
 
-	// a.attack("John");
-	// a.takeDamage(20);
-	// a.beRepaired(50);
-	ScavTrap	a;
+	a.attack( "Thor" );
+	a.takeDamage(100);
+	a.beRepaired(3);
+	a.guardGate();
 }

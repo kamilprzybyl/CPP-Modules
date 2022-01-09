@@ -3,9 +3,12 @@
 ClapTrap::ClapTrap() {
 
 	std::cout << "A default constructor has been called" << std::endl;
+	this->_hitPoints = 10;
+	this->_energyPoints = 10;
+	this->_attackDamage = 0;
 }
 
-ClapTrap::ClapTrap( std::string name ) {
+ClapTrap::ClapTrap( std::string const name ) {
 
 	std::cout << "Constructor has been called" << std::endl;
 	this->_name = name;
