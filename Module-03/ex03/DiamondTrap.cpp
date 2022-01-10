@@ -1,31 +1,32 @@
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap() : ScavTrap(), FragTrap() {
+DiamondTrap::DiamondTrap() {
 
-	std::cout << "DiamondTrap default constructor has been called" << std::endl;
-	this->FragTrap::_hitPoints = 100;
-	this->ScavTrap::_energyPoints = 50;
-	this->FragTrap::_attackDamage = 30;
+	std::cout << "DiamondTrap:		default constructor has been called" << std::endl;
+	this->_hitPoints = FragTrap::_hitPoints;
+	this->_energyPoints = ScavTrap::_energyPoints;
+	this->_attackDamage = FragTrap::_attackDamage;
 }
 
 DiamondTrap::DiamondTrap( std::string const name ) {
 
-	std::cout << "DiamondTrap constructor has been called" << std::endl;
+	std::cout << "DiamondTrap:		name constructor has been called" << std::endl;
 	this->_name = name;
-	this->FragTrap::_hitPoints = 100;
-	this->ScavTrap::_energyPoints = 50;
-	this->FragTrap::_attackDamage = 30;
+	this->ClapTrap::_name = name + "_clap_name";
+	this->_hitPoints = FragTrap::_hitPoints;
+	this->_energyPoints = ScavTrap::_energyPoints;
+	this->_attackDamage = FragTrap::_attackDamage;
 }
 
 DiamondTrap::DiamondTrap( DiamondTrap const & b ) {
 
-	std::cout << "DiamondTrap copy constructor has been called" << std::endl;
+	std::cout << "DiamondTrap:		copy constructor has been called" << std::endl;
 	*this = b;
 }
 
 DiamondTrap::~DiamondTrap() {
 
-	std::cout << "DiamondTrap destructor has been called" << std::endl;
+	std::cout << "DiamondTrap:		destructor has been called" << std::endl;
 }
 
 DiamondTrap	&DiamondTrap::operator=( DiamondTrap const & b ) {
@@ -37,10 +38,10 @@ DiamondTrap	&DiamondTrap::operator=( DiamondTrap const & b ) {
 
 void	DiamondTrap::attack( std::string const & target ) {
 
-	std::cout << "DiamondTrap " << this->_name << " attack " << target <<", causing " << this->_attackDamage << " points of damage!" << std::endl;
+	ScavTrap::attack(target);
 }
 
 void	DiamondTrap::whoAmI( void ) {
 
-	std::cout << "My name is " << this->_name << std::endl;
+	std::cout << "DiamondTrap: whoAmI:	" << this->_name << std::endl;
 }

@@ -1,5 +1,5 @@
 CFLAGS	=	-Wall -Wextra -Werror
-OUT		=	FragTrap
+OUT		=	DiamondTrap
 CC		=	clang++
 SRC		=	main.cpp \
 			ClapTrap.cpp \
@@ -10,7 +10,7 @@ OBJ		=	$(SRC:.cpp=.o)
 
 all: $(OUT)
 
-$(OUT): $(OBJ)
+$(OUT): $(OBJ) DiamondTrap.hpp
 	$(CC) $(CFLAGS) $(OBJ) -o $@
 
 clean:

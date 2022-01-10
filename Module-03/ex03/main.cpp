@@ -2,10 +2,12 @@
 
 int	main() {
 
-	DiamondTrap	a( "Potter" );
+	DiamondTrap	a( "BOB" );
 
-	a.attack( "Malfoy" );
+	a.attack( "Conor" );
 	a.takeDamage(100);
 	a.beRepaired(3);
 	a.highFivesGuys();
+	a.guardGate();
+	a.whoAmI();
 }
