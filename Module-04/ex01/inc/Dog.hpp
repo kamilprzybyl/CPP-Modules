@@ -1,18 +1,18 @@
 #pragma once
 
 #include <iostream>
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include <Animal.hpp>
+#include <Brain.hpp>
 
-class	Dog : virtual public Animal {
+class	Dog : public Animal {
 
 	private:
-		Brain	a;
+		Brain*	_brain;
 
 	public:
 		Dog();
 		Dog( Dog const & b );
-		~Dog();
+		virtual ~Dog();
 
 		Dog	&operator=( Dog const & b );
 };

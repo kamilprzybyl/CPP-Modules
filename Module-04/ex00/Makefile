@@ -1,17 +1,17 @@
 CC		=	clang++
 CFLAGS	=	-Wall -Wextra -Werror -I ./inc
 OUT		=	animal
-SRC		=	main.cpp \
-			Animal.cpp \
-			Dog.cpp \
-			Cat.cpp \
-			WrongAnimal.cpp \
-			WrongCat.cpp
+SRC		=	src/main.cpp \
+			src/Animal.cpp \
+			src/Dog.cpp \
+			src/Cat.cpp \
+			src/WrongAnimal.cpp \
+			src/WrongCat.cpp
 OBJ		=	$(SRC:.cpp=.o)
 
 all: $(OUT)
 
-%.o : src/%.cpp
+%.o : %.cpp
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 $(OUT): $(OBJ)

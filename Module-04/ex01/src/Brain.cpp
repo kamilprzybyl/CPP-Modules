@@ -18,7 +18,9 @@ Brain::~Brain() {
 
 Brain	&Brain::operator=( Brain const & b ) {
 
-	this->ideas = b.ideas;
+	for (int i = 0; i < 100; i++) {
+		this->ideas[i] = b.ideas[i];
+	}
 
 	return *this;
 }
