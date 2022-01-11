@@ -24,12 +24,12 @@ Animal	&Animal::operator=( Animal const & b ) {
 	return *this;
 }
 
-void	Animal::makeSound( void ) {
+void	Animal::makeSound( void ) const {
 
 	std::cout << "I am " << this->type << std::endl;
 }
 
-std::string	Animal::getType( void ) {
+std::string	Animal::getType( void ) const {
 
 	return this->type;
 }

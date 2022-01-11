@@ -4,7 +4,9 @@ CC		=	clang++
 SRC		=	main.cpp \
 			Animal.cpp \
 			Dog.cpp \
-			Cat.cpp
+			Cat.cpp \
+			WrongAnimal.cpp \
+			WrongCat.cpp
 OBJ		=	$(SRC:.cpp=.o)
 
 all: $(OUT)
