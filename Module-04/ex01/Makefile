@@ -1,6 +1,6 @@
 CC		=	clang++
 CFLAGS	=	-Wall -Wextra -Werror -I ./inc
-OUT		=	animal
+OUT		=	brain
 SRC		=	main.cpp \
 			Animal.cpp \
 			Dog.cpp \

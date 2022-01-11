@@ -1,4 +1,4 @@
-#include "Cat.hpp"
+#include <Cat.hpp>
 
 Cat::Cat() {
 
