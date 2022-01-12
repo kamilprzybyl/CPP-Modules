@@ -15,4 +15,6 @@ class	Cat : public Animal {
 		virtual ~Cat();
 
 		Cat	&operator=( Cat const & b );
+
+		void	makeSound( void ) const;
 };

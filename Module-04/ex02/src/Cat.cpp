@@ -28,3 +28,8 @@ Cat	&Cat::operator=( Cat const & b ) {
 
 	return *this;
 }
+
+void	Cat::makeSound( void ) const {
+
+	std::cout << "I am " << this->type << std::endl;
+}

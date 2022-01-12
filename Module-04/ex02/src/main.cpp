@@ -4,4 +4,7 @@
 int main()
 {
 	Animal	animal;
+	// Dog		dog;
+	// Cat		cat;
+	// dog.makeSound();
 }
