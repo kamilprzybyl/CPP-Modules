@@ -5,13 +5,16 @@
 
 class	MateriaSource : public IMateriaSource {
 
+	private:
+		AMateria*	_inventory[4];
+
 	public:
 		MateriaSource();
 		MateriaSource( MateriaSource const & b );
-		~MateriaSource();
+		virtual ~MateriaSource();
 
 		MateriaSource	&operator=( MateriaSource const & b );
 
-		void		learnMateria( AMateria* );
-		AMateria*	createMateria( std::string const & type );
+		virtual void		learnMateria( AMateria* );
+		virtual AMateria*	createMateria( std::string const & type );
 };

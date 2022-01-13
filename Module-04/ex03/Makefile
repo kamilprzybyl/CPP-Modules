@@ -1,12 +1,12 @@
 CC		=	clang++
-CFLAGS	=	-Wall -Wextra -Werror -I ./inc
+CFLAGS	=	-W -Wall -Werror -I ./inc
 OUT		=	aMateria
 SRC		=	src/main.cpp \
 			src/AMateria.cpp \
 			src/Cure.cpp \
 			src/Ice.cpp \
-			src/ICharacter.cpp \
-			src/IMateriaSource
+			src/Character.cpp \
+			src/MateriaSource.cpp
 OBJ		=	$(SRC:.cpp=.o)
 
 all: $(OUT)

@@ -12,6 +12,6 @@ class	Cure : public AMateria {
 
 		Cure	&operator=( Cure const & b );
 
-		AMateria*	clone() const;
-		void		use( ICharacter& target );
+		virtual AMateria*	clone() const;
+		virtual void		use( ICharacter& target );
 };

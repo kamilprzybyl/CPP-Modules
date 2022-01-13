@@ -1,7 +1,8 @@
 #pragma once
 
 #include <iostream>
-#include <ICharacter.hpp>
+
+class	ICharacter;
 
 class	AMateria {
 
@@ -10,7 +11,7 @@ class	AMateria {
 
 	public:
 		AMateria();
-		AMateria( AMateria const & b );
+		explicit AMateria( AMateria const & b );
 		AMateria( std::string const & type );
 		virtual ~AMateria();
 
