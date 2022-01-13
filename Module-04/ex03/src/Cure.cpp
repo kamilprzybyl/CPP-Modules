@@ -2,16 +2,15 @@
 
 Cure::Cure() : AMateria("cure") {}
 
-Cure::Cure( Cure const & b ) {
-
-	*this = b;
-}
+Cure::Cure( Cure const & b ) :AMateria(b) {}
 
 Cure::~Cure() {}
 
 Cure	&Cure::operator=( Cure const & b ) {
 
-	this->_type = b._type;
+	if (this != &b) {
+
+	}
 
 	return *this;
 }

@@ -11,7 +11,9 @@ Ice::~Ice() {}
 
 Ice	&Ice::operator=( Ice const & b ) {
 
-	this->_type = b._type;
+	if (this != &b) {
+
+	}
 
 	return *this;
 }

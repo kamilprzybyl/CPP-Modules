@@ -14,7 +14,9 @@ AMateria::~AMateria() {}
 
 AMateria	&AMateria::operator=( AMateria const & b ) {
 
-	this->_type = b._type;
+	if (this != &b) {
+		this->_type = b._type;
+	}
 
 	return *this;
 }

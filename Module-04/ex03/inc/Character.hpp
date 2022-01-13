@@ -10,7 +10,6 @@ class	Character : public ICharacter {
 		AMateria*	_inventory[4];
 
 	public:
-		Character();
 		Character( std::string const name );
 		Character( Character const & b );
 		virtual ~Character();
