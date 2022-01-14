@@ -25,21 +25,21 @@ MateriaSource	&MateriaSource::operator=( MateriaSource const & b ) {
 
 void	MateriaSource::learnMateria( AMateria* m ) {
 
-	int i = 0;
-	while (this->_inventory[i]) {
+	if (!m) return ;
+
+	for (int i = 0; i < 4; i++) {
 		if (!this->_inventory[i]) {
 			this->_inventory[i] = m;
+			return ;
 		}
-		i++;
 	}
 }
 
 AMateria*	MateriaSource::createMateria( std::string const & type ) {
 
-	int i = 0;
-	while (this->_inventory[i]) {
-		if (this->_inventory[i]->getType() == type) {
-			return this->_inventory[i];
+	for (int i = 0; i < 4; i++)  {
+		if (this->_inventory[i] && this->_inventory[i]->getType() == type) {
+			return this->_inventory[i]->clone();
 		}
 	}
 

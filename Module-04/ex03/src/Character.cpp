@@ -32,12 +32,13 @@ std::string const &	Character::getName() const {
 
 void				Character::equip( AMateria* m ) {
 
-	int i = 0;
-	while (this->_inventory[i]) {
+	if (!m) return ;
+
+	for (int i = 0; i < 4; i++) {
 		if (!this->_inventory[i]) {
 			this->_inventory[i] = m;
+			return ;
 		}
-		i++;
 	}
 }
 
