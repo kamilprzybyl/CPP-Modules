@@ -3,13 +3,14 @@
 
 int	main() {
 
-	try
-	{
-		/* do some stuff with bureaucrats */
-		throw Bureaucrat( "Me", 1 );
+	try {
+
+		Bureaucrat	bureaucrat( "Me", 0 );
+
+		std::cout << bureaucrat.getName() << std::endl;
 	}
 	catch (std::exception & e)
 	{
-		/* handle exception */
+		std::cout << e.what() << std::endl; 
 	}
 }
