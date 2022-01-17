@@ -46,8 +46,15 @@ void				Bureaucrat::decrement() {
 
 void	Bureaucrat::signForm( Form & form ) {
 
-	// std::cout << this->_name << " signs " << form.getName() << std::endl;
-	form.getName();
+	try {
+		
+		form.beSigned(*this);
+		std::cout << this->_name << " signs " << form.getName() << std::endl;
+	}
+	catch (std::exception &e) {
+
+		std::cout << this->_name << " cannot sign " << form.getName() << " because " << e.what() << std::endl;
+	}
 }
 
 char const	*Bureaucrat::GradeTooHighException::what() const throw() {

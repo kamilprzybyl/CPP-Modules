@@ -6,12 +6,13 @@ int	main() {
 
 	try {
 
-		Bureaucrat	bureaucrat( "Me", 0 );
+		Bureaucrat	bureaucrat( "Me", 27 );
+		Form		form( "firstForm", 26, 15 );
 
-		std::cout << bureaucrat.getName() << std::endl;
+		bureaucrat.signForm(form);
 	}
-	catch (std::exception & e)
-	{
+	catch (std::exception & e) {
+
 		std::cout << e.what() << std::endl; 
 	}
 }
