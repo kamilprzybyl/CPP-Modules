@@ -21,7 +21,7 @@ ShrubberyCreationForm	&ShrubberyCreationForm::operator=( ShrubberyCreationForm c
 	return *this;
 }
 
-void	ShrubberyCreationForm::action( std::string target ) {
+void	ShrubberyCreationForm::action( std::string target ) const {
 
 	std::ofstream	file(target + "_shrubbery");
 

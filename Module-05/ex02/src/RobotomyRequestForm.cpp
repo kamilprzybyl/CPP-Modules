@@ -19,7 +19,7 @@ RobotomyRequestForm	&RobotomyRequestForm::operator=( RobotomyRequestForm const &
 	return *this;
 }
 
-void	RobotomyRequestForm::action( std::string target ) {
+void	RobotomyRequestForm::action( std::string target ) const {
 
 	std::cout << "some drilling noises" << std::endl;
 	std::cout << target << " has been robotomized successfully 50% ofthe time" << std::endl;
