@@ -22,12 +22,13 @@ class	Form {
 
 		Form	&operator=( Form const & b );
 
-		std::string	getName() const;
-		int			getGradeToSign() const;
-		int			getGradeToExec() const;
-		bool		getSigned();
-		void		beSigned( Bureaucrat const & bureaucrat);
-		void		executeForm(Form const & form);
+		std::string		getName() const;
+		int				getGradeToSign() const;
+		int				getGradeToExec() const;
+		bool			getSigned();
+		void			beSigned( Bureaucrat const & bureaucrat);
+		virtual void	execute( Bureaucrat const & executor ) const;
+		virtual void	action( std::string target ) const = 0;
 
 		class GradeTooHighException : public std::exception {
 
@@ -36,6 +37,12 @@ class	Form {
 		};
 
 		class GradeTooLowException : public std::exception {
+
+			public:
+				virtual const char*	what() const throw();
+		};
+
+		class FormNotSignedException : public std::exception {
 
 			public:
 				virtual const char*	what() const throw();
