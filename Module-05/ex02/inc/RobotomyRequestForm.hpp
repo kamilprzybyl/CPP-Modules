@@ -16,5 +16,5 @@ class	RobotomyRequestForm : public Form {
 
 		RobotomyRequestForm	&operator=( RobotomyRequestForm const & b );
 
-		void	action( std::string target ) const;
+		void	action() const;
 };

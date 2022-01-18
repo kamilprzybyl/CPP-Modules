@@ -44,7 +44,7 @@ void	Form::execute( Bureaucrat const & executor ) const {
 	if (executor.getGrade() > this->_gradeToExec) {
 		throw Form::GradeTooLowException();
 	}
-	// action();
+	action();
 }
 
 char const	*Form::GradeTooHighException::what() const throw() {

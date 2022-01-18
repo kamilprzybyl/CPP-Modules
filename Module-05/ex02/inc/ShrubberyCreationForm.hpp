@@ -16,5 +16,5 @@ class	ShrubberyCreationForm : public Form {
 
 		ShrubberyCreationForm	&operator=( ShrubberyCreationForm const & b );
 
-		void	action( std::string target ) const;
+		void	action() const;
 };

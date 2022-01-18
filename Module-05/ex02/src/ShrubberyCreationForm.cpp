@@ -2,9 +2,9 @@
 #include <iostream>
 #include <fstream>
 
-ShrubberyCreationForm::ShrubberyCreationForm() : Form("ShrubberyCreationForm", 145, 137) {}
+ShrubberyCreationForm::ShrubberyCreationForm() : Form("ShrubberyCreationForm", 145, 137), _target() {}
 
-ShrubberyCreationForm::ShrubberyCreationForm( std::string target ) : _target(target) {}
+ShrubberyCreationForm::ShrubberyCreationForm( std::string target ) : Form("ShrubberyCreationForm", 145, 137), _target(target) {}
 
 ShrubberyCreationForm::ShrubberyCreationForm( ShrubberyCreationForm const & b ) : Form(b) {
 
@@ -21,9 +21,9 @@ ShrubberyCreationForm	&ShrubberyCreationForm::operator=( ShrubberyCreationForm c
 	return *this;
 }
 
-void	ShrubberyCreationForm::action( std::string target ) const {
+void	ShrubberyCreationForm::action() const {
 
-	std::ofstream	file(target + "_shrubbery");
+	std::ofstream	file(this->_target + "_shrubbery");
 
 	file << "ASCII trees" << std::endl;
 	file.close();

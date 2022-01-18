@@ -1,8 +1,8 @@
 #include <RobotomyRequestForm.hpp>
 
-RobotomyRequestForm::RobotomyRequestForm() : Form("RobotomyRequestForm", 72, 45) {}
+RobotomyRequestForm::RobotomyRequestForm() : Form("RobotomyRequestForm", 72, 45), _target() {}
 
-RobotomyRequestForm::RobotomyRequestForm( std::string target ) : _target(target) {}
+RobotomyRequestForm::RobotomyRequestForm( std::string target ) : Form("RobotomyRequestForm", 72, 45), _target(target) {}
 
 RobotomyRequestForm::RobotomyRequestForm( RobotomyRequestForm const & b ) : Form(b) {
 
@@ -19,8 +19,8 @@ RobotomyRequestForm	&RobotomyRequestForm::operator=( RobotomyRequestForm const &
 	return *this;
 }
 
-void	RobotomyRequestForm::action( std::string target ) const {
+void	RobotomyRequestForm::action() const {
 
 	std::cout << "some drilling noises" << std::endl;
-	std::cout << target << " has been robotomized successfully 50% ofthe time" << std::endl;
+	std::cout << this->_target << " has been robotomized successfully 50% of the time" << std::endl;
 }
