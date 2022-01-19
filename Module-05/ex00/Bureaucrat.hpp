@@ -29,7 +29,7 @@ class	Bureaucrat {
 		Bureaucrat	&operator=( Bureaucrat const & b );
 
 		std::string const	getName() const;
-		int					getGrade();
+		int					getGrade() const;
 
 		void				increment();
 		void				decrement();
