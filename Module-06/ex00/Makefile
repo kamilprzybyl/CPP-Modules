@@ -1,7 +1,8 @@
 CC		=	clang++
 CFLAGS	=	-Wextra -Wall -Werror -I ./
 OUT		=	scalarConv
-SRC		=	main.cpp
+SRC		=	main.cpp \
+			Convert.cpp
 OBJ		=	$(SRC:.cpp=.o)
 
 all: $(OUT)
