@@ -18,60 +18,55 @@ Convert::~Convert() {}
 
 char	Convert::toChar() const {
 
-int	c;
 	try {
-		c = stoi(this->_type);
+		int c = stoi(this->_type);
+		if (c < 0 || c > 255) {
+			throw Convert::impossible();
+		}
+		if (!isprint(c)) {
+			throw Convert::nonDisplayable();
+		}
+		return static_cast<char>(c);
 	}
 	catch (std::exception & e) {
 		throw Convert::impossible();
 	}
-	if (c < 0 || c > 255) {
-		throw Convert::impossible();
-	}
-	if (!isprint(c)) {
-		throw Convert::nonDisplayable();
-	}
 
-	return static_cast<char>(c);
 }
 
 int		Convert::toInt() const {
 
-	int	n = stoi(this->_type);
-	// if ()
-	// try {
-	// 	std::cout << "int: " << n << std::endl;
-	// }
-	// catch (std::exception &e) {
-	// 	std::cout << "int: " << std::endl;
-	// }
-	return n;
+	try {
+		int	n = stoi(this->_type);
+		return n;
+	}
+	catch (std::exception &e) {
+		throw Convert::impossible();
+	}
 }
 
 float	Convert::toFloat() const {
 
-	float f = std::stof(this->_type);
 
-	// try {
-	// 	std::cout << "float: " << f << ".0" << std::endl;
-	// }
-	// catch (std::exception &e) {
-	// 	std::cout << "float: " << std::endl;
-	// }
+	try {
+		float f = std::stof(this->_type);
+		return f;
+	}
+	catch (std::exception &e) {
+		throw Convert::impossible();
+	}
 
-	return f;
 }
 
 double	Convert::toDouble() const {
 
-	double d = std::stod(this->_type);
-	// try {
-	// 	std::cout << "double: " << d << ".0" << std::endl;
-	// }
-	// catch (std::exception &e) {
-	// 	std::cout << "double: " << std::endl;
-	// }
-	return d;
+	try {
+		double d = std::stod(this->_type);
+		return d;
+	}
+	catch (std::exception &e) {
+		throw Convert::impossible();
+	}
 }
 
 char const	*Convert::nonDisplayable::what() const throw() {
@@ -106,15 +101,25 @@ std::ostream &operator<<( std::ostream &os, Convert const & b )
 	os << "float: ";
 	try {
 		float	f = b.toFloat();
-		os << f << ".0" << std::endl;
+		if (std::isnan(f) && std::signbit(f))
+			os << "-";
+		os << f;
+		if (!std::isnan(f) && f - (int)f == 0)
+			os << ".0";
+		os <<"f" << std::endl;
 	}
 	catch (std::exception &e) {
 		os << e.what() << std::endl;
 	}
 	os << "double: ";
 	try {
-		int	d = b.toDouble();
-		os << d << ".0" << std::endl;
+		double	d = b.toDouble();
+		if (std::isnan(d) && std::signbit(d))
+			os << "-";
+		os << d;
+		if (!std::isnan(d) && d - (int)d == 0)
+			os << ".0";
+		os << std::endl;
 	}
 	catch (std::exception &e) {
 		os << e.what() << std::endl;
