@@ -18,8 +18,8 @@ int	main() {
 
 	data._name = "Jan";
 
-	uintptr_t	ret = serialize(&data);
-	Data*		ret2 = deserialize(ret);
+	uintptr_t	ser = serialize(&data);
+	Data*		des = deserialize(ser);
 
-	std::cout << ret2->_name << std::endl;
+	std::cout << des->_name << std::endl;
 }

@@ -21,35 +21,33 @@ Base	*generate( void ) {
 
 void	identify( Base* p ) {
 
-	// if (p = a) {
-		// std::cout << "A" << std::endl;
-	// }
-	// if (p = b) {
-	// 	std::cout << "B" << std::endl;
-	// }
-	// if (p = c) {
-	// 	std::cout << "C" << std::endl;
-	// }
+	if (dynamic_cast<A *>(p)) {
+		std::cout << "A" << std::endl;
+	}
+	if (dynamic_cast<B *>(p)) {
+		std::cout << "B" << std::endl;
+	}
+	if (dynamic_cast<C *>(p)) {
+		std::cout << "C" << std::endl;
+	}
 }
 
 void	identify( Base& p ) {
 
-	// if (p = a) {
-	// 	std::cout << "A" << std::endl;
-	// }
-	// if (p = b) {
-	// 	std::cout << "B" << std::endl;
-	// }
-	// if (p = c) {
-	// 	std::cout << "C" << std::endl;
-	// }
+	if (dynamic_cast<A *>(&p)) {
+		std::cout << "A" << std::endl;
+	}
+	if (dynamic_cast<B *>(&p)) {
+		std::cout << "B" << std::endl;
+	}
+	if (dynamic_cast<C *>(&p)) {
+		std::cout << "C" << std::endl;
+	}
 }
 
 int	main() {
 
-	for (int i = 0; i < 3; i++) {
-		Base	*random = generate();
-		identify(random);
-		identify(&random);
-	}
+	Base	*random = generate();
+	identify(random);
+	identify(*random);
 }
