@@ -1,7 +1,7 @@
 CC		=	clang++
 CFLAGS	=	-Wextra -Wall -Werror -I ./
-OUT		=	bureaucrat
-SRC		=	src/main.cpp
+OUT		=	serialization
+SRC		=	main.cpp
 OBJ		=	$(SRC:.cpp=.o)
 
 all: $(OUT)

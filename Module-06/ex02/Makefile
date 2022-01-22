@@ -1,11 +1,7 @@
 CC		=	clang++
 CFLAGS	=	-Wextra -Wall -Werror -I ./
 OUT		=	identifyType
-SRC		=	main.cpp \
-			Base.cpp \
-			A.cpp \
-			B.cpp \
-			C.cpp
+SRC		=	main.cpp
 OBJ		=	$(SRC:.cpp=.o)
 
 all: $(OUT)

@@ -2,7 +2,7 @@
 
 #include <Base.hpp>
 
-class	B : Base {
+class	A : public Base {
 
-	
+	~A();
 };
