@@ -19,6 +19,10 @@ Base	*generate( void ) {
 	}
 }
 
+/*	dynamic_cast < new-type > ( expression )
+	If the cast is successful, dynamic_cast returns a value of type new-type.
+	If the cast fails and new-type is a pointer type, it returns a null pointer of that type. */
+
 void	identify( Base* p ) {
 
 	if (dynamic_cast<A *>(p)) {
@@ -48,6 +52,9 @@ void	identify( Base& p ) {
 int	main() {
 
 	Base	*random = generate();
+
+	std::cout << "ref:		";
 	identify(random);
+	std::cout << "pointer:	";
 	identify(*random);
 }

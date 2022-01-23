@@ -1,6 +1,8 @@
 #include <iostream>
 #include <Data.hpp>
 
+// For casting to and from void*, static_cast should be preferred.
+
 uintptr_t	serialize(Data* ptr) {
 
 	return reinterpret_cast<uintptr_t>(ptr);
@@ -18,8 +20,10 @@ int	main() {
 
 	data._name = "Jan";
 
+	std::cout << "before serializaation:	" << &data._name << std::endl;
+
 	uintptr_t	ser = serialize(&data);
 	Data*		des = deserialize(ser);
 
-	std::cout << des->_name << std::endl;
+	std::cout << "after serializaation:	" << &des->_name << std::endl;
 }

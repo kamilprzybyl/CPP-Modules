@@ -2,36 +2,39 @@
 
 Convert::Convert( std::string type ) : _type(type) {}
 
-// Convert::Convert( Convert const & b ) {
+Convert::Convert( Convert const & b ) {
 
-// 	*this = b;
-// }
+	*this = b;
+}
 
 Convert::~Convert() {}
 
-// Convert	&Convert::operator=( Convert const & b ) {
+Convert	&Convert::operator=( Convert const & b ) {
 
-// 	this->_type = b._type;
+	this->_type = b._type;
 
-// 	return *this;
-// }
+	return *this;
+}
 
 char	Convert::toChar() const {
 
+	int	c;
+
 	try {
-		int c = stoi(this->_type);
-		if (c < 0 || c > 255) {
-			throw Convert::impossible();
-		}
-		if (!isprint(c)) {
-			throw Convert::nonDisplayable();
-		}
-		return static_cast<char>(c);
+		c = stoi(this->_type);
 	}
 	catch (std::exception & e) {
 		throw Convert::impossible();
 	}
 
+	if (c < 0 || c > 255) {
+		throw Convert::impossible();
+	}
+	if (!isprint(c)) {
+		throw Convert::nonDisplayable();
+	}
+
+	return c;
 }
 
 int		Convert::toInt() const {

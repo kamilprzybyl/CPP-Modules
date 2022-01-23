@@ -6,14 +6,14 @@
 class	Convert {
 
 	private:
-		std::string const	_type;
+		std::string	_type;
 
 	public:
 		Convert( std::string type );
-		// Convert( Convert const & b );
+		Convert( Convert const & b );
 		~Convert();
 
-		// Convert	&operator=( Convert const & b );
+		Convert	&operator=( Convert const & b );
 
 		char	toChar() const;
 		int		toInt() const;
