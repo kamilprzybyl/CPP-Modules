@@ -37,7 +37,13 @@ void	identify( Base* p ) {
 }
 
 void	identify( Base& p ) {
+	try {
+		Base &out = dynamic_cast<A &>(p);
+		
+	}
+	catch (std::exception const &e) {
 
+	}
 	if (dynamic_cast<A *>(&p)) {
 		std::cout << "A" << std::endl;
 	}
