@@ -32,9 +32,9 @@ Fixed&	Fixed::operator=( const Fixed& other ) {
 	return *this;
 }
 
-std::ostream &operator<<( std::ostream& os, const Fixed& fixPointNum )
+std::ostream &operator<<( std::ostream& os, const Fixed& b )
 {
-	os << fixPointNum.toFloat();
+	os << b.toFloat();
 
 	return os;
 }
