@@ -17,10 +17,10 @@ class	Span {
 
 		Span	&operator=( Span const & b );
 
-		void			addNumber( int n );
-		void			addNumber( std::vector<int>::iterator const &begin, std::vector<int>::iterator const &end );
-		unsigned int	shortestSpan();
-		unsigned int	longestSpan();
+		void	addNumber( int n );
+		void	addNumber( std::vector<int>::iterator const &begin, std::vector<int>::iterator const &end );
+		int		shortestSpan();
+		int		longestSpan();
 
 		class alreadyStored : public std::exception {
 			

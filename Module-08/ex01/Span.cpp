@@ -41,29 +41,38 @@ void	Span::addNumber( std::vector<int>::iterator const &begin, std::vector<int>:
 	}
 }
 
-unsigned int	Span::shortestSpan() {
+int	Span::shortestSpan() {
 
-	if (_arr.size() <= 1) {
-		throw Span::noSpanFound();
+	std::vector<int>::iterator it = _arr.begin();
+	std::vector<int>::iterator it2 = ++_arr.begin();
+	int min = abs(*it2 - *it);
+	for (it = _arr.begin(); it != _arr.end(); it++) {
+		for ( it2 = it + 1; it2 != _arr.end(); it2++) {
+			if (abs(*it2 - *it) < min) {
+				min = abs(*it2 - *it);
+			}
+		}
 	}
 
-	std::vector<int> copy = _arr;
-	std::vector<int>::iterator it = ++copy.begin();
-	std::sort(copy.begin(), copy.end());
-
-	return *it - copy.front();
+	return min;
 }
 
-unsigned int	Span::longestSpan() {
+int	Span::longestSpan() {
 
 	if (_arr.size() <= 1) {
 		throw Span::noSpanFound();
 	}
 
-	std::vector<int> copy = _arr;
-	std::sort(copy.begin(), copy.end());
+	int max = 0;
+	for (std::vector<int>::iterator it = _arr.begin(); it != _arr.end(); it++) {
+		for (std::vector<int>::iterator it2 = it + 1; it2 != _arr.end(); it2++) {
+			if (abs(*it2 - *it) > max) {
+				max = abs(*it2 - *it);
+			}
+		}
+	}
 
-	return copy.back() - copy.front();
+	return max;
 }
 
 char const	*Span::alreadyStored::what() const throw() {
