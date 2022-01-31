@@ -5,7 +5,7 @@
 class NotFound : public std::exception {
 	
 	public:
-		const char	*what() const throw() {
+		char const	*what() const throw() {
 
 			return "not found";
 		}
