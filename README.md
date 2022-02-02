@@ -1,2 +1,2 @@
 # CPP-Modules
-some cpp basics
+Time to dive into Object Oriented Programming!
